@@ -75,8 +75,71 @@
         </div>
     </div>
 
+    <!-- ========================================main analytic============================= -->
+     <div class="main">
+        <div class="analytic-container">
+        <section class="Weather">
+            <h2>Today's Weather</h2>
+            <div class="weather-card">weather-card
+                <h3 id="today's-date"></h3>
+                <h3 id="place-name"></h3>
+                <p id="today-temperature">Temperature : 20°C</p>
+                <p id="today-condition">Condition : Sunny</p>
+                <p id="today-humidity">Humidity : 45%</p>
+            </div>
+        </section>
 
+        <!-- =================================Weekly Forecast============================= -->
+         <section class="weekly-forcast">
+            <h2>Weekly Forecast</h2>
+            <div class="forecast-list">
+                <div class="forecast-item">
+                    <h4>Monday</h4>
+                    <p>Temperature: 25°C</p>
+                    <p>Condition: Cloudy</p>
+                </div>
+                <div class="forecast-item">
+                    <h4>Tuesday</h4>
+                    <p>Temperature: 24°C</p>
+                    <p>Condition: Rainy</p>
+                </div>
+                <div class="forecast-item">
+                    <h4>Wednesday</h4>
+                    <p>Temperatue: 19°C</p>
+                    <p>Condition: Sunny</p>
+                </div>
+                <div class="forecast-item">
+                    <h4>Thursday</h4>
+                    <p>Temperature: 21°C</p>
+                    <p>Condition: Cloudy</p>
+                </div>
+                <div class="temperature-itme">
+                    <h4>Friday</h4>
+                    <p>Temperature: 23°C</p>
+                    <p>Condition: Sunny</p>
+                </div>
+                <div class="temperature-itme">
+                    <h4>Saturday</h4>
+                    <p>Temperature: 25°C</p>
+                    <p>Conddition: Thunderstorms</p>
+                </div>
+                <div class="temperature-itme">
+                    <h4>Sunday</h4>
+                    <p>Temperature: 20°C</p>
+                    <p>Condition: Clear</p>
+                </div>
+            </div>
+         </section>
+         <!-- =====================================chat wather============================================= -->
+          <section class="temperature-itme">
+            <h2>Temperature of the week</h2>
+            <canvas id="temperatureChart" width="400" height="300"></canvas>
+          </section>
+     </div>
+     </div>
 
+     <!-- ==============chat.js================ -->
+       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     
     <script src="../JavaScript/index.js"></script>
