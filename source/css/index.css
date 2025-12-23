@@ -887,7 +887,7 @@ h5 {
   display: flex;
   align-items: center;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 16px;
   border: 2px solid #e0e0e0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -919,7 +919,7 @@ h5 {
 
 .search-wrapper input::placeholder {
   color: #999;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
 }
 
