@@ -8,6 +8,7 @@
     <title>Wonder Weather</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/add-new-account.css">
 </head>
 
 <body>
@@ -73,13 +74,66 @@
                 </li>
             </ul>
         </div>
+
+        <!-- =============== main ================ -->
+        <div class="main">
+            <div class="main-form-container" id="main-form-container">
+                <div class="form-container register">
+                    <form>
+                        <h1>Register Account</h1>
+                        <div class="social-icons">
+                        </div>
+                        <div class="circle">
+                            <input type="file" accept="image/*" id="profile-pic" onchange="loadFile(event)">
+                            <img id="output" style="width: 100%; height: 100%; object-fit: cover; display: none;" />
+                        </div>
+                        <input type="text" id="name" placeholder="Name">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="password" id="password" placeholder="Password">
+                        <a href="../../index.html" style="text-decoration: none;">
+                            <button id="submit-register"
+                                style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Register
+                            </button>
+                        </a>
+                    </form>
+                </div>
+                <div class="form-container login">
+                    <form>
+                        <h1>Login</h1>
+                        <div class="social-icons">
+                        </div>
+                        <input type="email" id="email-login" placeholder="Email">
+                        <input type="password" id="password-login" placeholder="Password">
+                        <a href="#">Forget Your Password?</a>
+                        <a href="../../index.html" style="text-decoration: none;">
+                            <button id="submit-login"
+                                style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Login
+                            </button>
+                        </a>
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-middle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of the site's features</p>
+                            <button class="hidden" id="login">Login</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of the site's features</p>
+                            <button class="hidden" id="register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-
-    
     <script src="../JavaScript/index.js"></script>
+    <script src="../JavaScript/js/add-new-account.js"></script>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
