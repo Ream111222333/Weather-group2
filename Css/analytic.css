@@ -1,0 +1,176 @@
+/* ================== ROOT VARIABLES ================== */
+:root {
+    --sky-light: #e0f2fe;
+    --sky-main: #bae6fd;
+    --primary: #38bdf8;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.85);
+    --text-dark: #0f172a;
+    --text-soft: #64748b;
+    --border-soft: rgba(56, 189, 248, 0.35);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.15);
+    --radius-lg: 18px;
+    --radius-md: 14px;
+}
+
+/* ================== MAIN LAYOUT ================== */
+.main {
+    flex-grow: 4;
+    padding: 32px;
+    background: linear-gradient(180deg, var(--sky-light), #f8fafc);
+    min-height: 100vh;
+    margin-left: 40px;
+}
+
+.analytic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+/* ================== TODAY WEATHER ================== */
+.Weather {
+    width: 100%;
+    max-width: 920px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.Weather h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+/* ================== CURRENT WEATHER CARD ================== */
+.weather-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 24px;
+    background: linear-gradient(135deg, var(--sky-main), var(--white));
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 0 0 1px var(--border-soft);
+}
+
+.weather-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.weather-card p {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+/* ================== WEEKLY FORECAST SECTION ================== */
+.weekly-chart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+/* ================== WEEKLY FORECAST ================== */
+.weekly-forcast {
+    width: 100%;
+    max-width: 840px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.weekly-forcast h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* ================== FORECAST GRID ================== */
+.forecast-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* ================== FORECAST ITEM ================== */
+.forecast-item {
+    background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forecast-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.forecast-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.forecast-item p {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+}
+
+/* ================== TEMPERATURE CHART ================== */
+.temperature-chart {
+    width: 100%;
+    max-width: 640px;
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    margin-left: 40px;
+}
+
+.temperature-chart h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+    .forecast-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .main {
+        padding: 20px;
+    }
+
+    .Weather,
+    .weekly-forcast,
+    .temperature-chart {
+        padding: 20px;
+    }
+
+    .forecast-list {
+        grid-template-columns: 1fr;
+    }
+}
