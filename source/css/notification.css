@@ -1,0 +1,139 @@
+/* ================= Notification Container ================= */
+.notification-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.notification-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #171C60;
+}
+
+/* Clear button */
+.clear-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #ff4444;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+}
+
+/* ================= Notification List ================= */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Notification Card */
+.notification-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: #f9fbff;
+    border-left: 5px solid #00c0d9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Unread style */
+.notification-item.unread {
+    background: #eef8ff;
+    border-left-color: #171C60;
+}
+
+/* Notification Info */
+.notification-info h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #171C60;
+    margin-bottom: 5px;
+}
+
+.notification-message {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Time */
+.notification-time {
+    font-size: 0.85rem;
+    color: #999;
+    white-space: nowrap;
+}
+
+/* Delete Button */
+.delete-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #d90000;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+    .notification-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: left;
+    }
+
+    .notification-time {
+        font-size: 0.8rem;
+    }
+
+    .delete-btn {
+        align-self: flex-start;
+    }
+}
