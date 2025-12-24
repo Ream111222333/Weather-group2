@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonder Weather</title>
+    <title>Weather World</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="./css/search-styles.css">
+    <!-- ======= Favicon ====== -->
+    <link rel="shortcut icon" href="./assets/image-icon/weather-logo.svg" type="image/svg+xml">
 </head>
 
 <body>
+
     <!-- =============== Navigation ================ -->
     <div class="container">
         <div class="navigation">
@@ -18,7 +22,7 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <img id="image-logo" src="/image/logo.png" alt="logo-weather-app">
+                            <img id="image-logo" src="./assets/image-icon/weather-logo.svg" alt="logo-weather-app" style="width: 40px; height: 40px;">
                         </span>
                         <span class="title">Weather World</span>
                     </a>
@@ -73,13 +77,57 @@
                 </li>
             </ul>
         </div>
+
+        <header class="head">
+            <nav>
+                <div class="topbar">
+                    <div class="group-menu-and-search">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                        <div class="search">
+                            <label class="search-wrapper">
+                                <input type="search" onclick="getWeather()" id="search-input" placeholder="Search weather by city..." aria-label="Search Weather">
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
+                            </label>
+                            <div id="suggestions" class="suggestions"></div>
+                        </div>
+                    </div>
+                    <div class="group-notif-profile">
+                        <a href="Page/notification.html">
+                            <div class="notification">
+                                <ion-icon name="notifications-outline" id="notification"></ion-icon>
+                            </div>
+                        </a>
+                        <a href="Page/profile.html">
+                            <div class="user">
+                                <img id="profile-icon" src="./assets/image-icon/user-profile-icon.svg" alt="user-profile" style="width: 40px; height: 40px;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="cardBox"></div>   
+            <div class="current-weather">
+                <div class="weather-detail-today" id="weather-detail-today"></div>
+                <div class="weather-detail-seven-day" id="weather-detail-seven-day"></div>
+                <div id="loading-indicator" style="display: none;">Loading...</div>
+            </div>
+        </div>
+     
     </div>
-
-
-
-
-
     <script src="JavaScript/index.js"></script>
+    <script src="JavaScript/js/showWeather.js"></script>
+    <script src="JavaScript/js/profile.js"></script>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

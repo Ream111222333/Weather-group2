@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonder Weather</title>
+    <title>Weather World</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/add-new-account.css">
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- ======= Favicon ====== -->
+    <link rel="shortcut icon" href="../../assets/image-icon/logo-favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,13 +24,13 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <img id="image-logo" src="/image/logo.png" alt="logo-weather-app">
+                            <img id="image-logo" src="/assets/image-icon/weather-logo.svg" alt="logo-weather-app">
                         </span>
                         <span class="title">Weather World</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../index.html">
+                    <a href="../../index.html">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -73,13 +79,107 @@
                 </li>
             </ul>
         </div>
+
+        <header class="head">
+            <nav>
+                <div class="topbar">
+                    <div class="group-menu-and-search">
+                        <span class="icon">
+                            <img id="image-logo-responsive" src="../../assets/image-icon/logo-favicon.png"
+                                alt="logo-weather-app">
+                        </span>
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+
+                    </div>
+                    <div class="group-notif-profile">
+                        <a href="./notification.html">
+                            <div class="notification">
+                                <ion-icon name="notifications-outline" id="notification"></ion-icon>
+                            </div>
+                        </a>
+                        <a href="./profile.html">
+                            <div class="user">
+                                <img id="profile-icon" src="../../assets/image/photo_2024-11-11_18-45-00.jpg"
+                                    alt="User profile picture">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+
+            <div class="main-form-container" id="main-form-container">
+                <div class="form-container register">
+                    <form>
+                        <h1>Register Account</h1>
+                        <div class="social-icons">
+                        </div>
+                        <div class="circle">
+                            <input type="file" accept="image/*" id="profile-pic" onchange="loadFile(event)">
+                            <img id="output" style="width: 100%; height: 100%; object-fit: cover; display: none;" />
+                        </div>
+                        <input type="text" id="name" placeholder="👤Name">
+                        <input type="email" id="email" placeholder="📧Email">
+                        <input type="password" id="password" placeholder="🔒Password">
+                        <a href="../../index.html" style="text-decoration: none;">
+                            <button id="submit-register"
+                                style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Register
+                            </button>
+                        </a>
+                    </form>
+                </div>
+                <div class="form-container login">
+                    <form>
+                        <h1>Login</h1>
+                        <div class="social-icons">
+                        </div>
+                        <input type="email" id="email-login" placeholder="📧Email">
+                        <input type="password" id="password-login" placeholder="🔒Password">
+                        <a href="#" style="color: rgb(10, 174, 10);font-weight: 900;">Forget Your Password?</a>
+                        <a href="../../index.html" style="text-decoration: none;">
+                            <button id="submit-login"
+                                style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Login 🔐
+                            </button>
+                            <div id="register-message" style="margin-bottom: 10px; font-weight: bold;"></div>
+                        </a>
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-middle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of the site's features</p>
+                            <button class="hidden" id="login">Sign Up</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of the site's features</p>
+                            <button class="hidden" id="register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-
-
-
-
     
+    <!-- =========== Scripts =========  -->
+    <script src="../JavaScript/js/add-new-account.js"></script>
     <script src="../JavaScript/index.js"></script>
+    <script src="../JavaScript/js/form.js"></script>
+    <script src="../JavaScript/js/profile.js"></script>
+
+
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
