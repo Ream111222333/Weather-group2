@@ -96,3 +96,4 @@ document.getElementById('profile-pic').addEventListener('change', (e) => {
       reader.readAsDataURL(file);
   }
 });
+
