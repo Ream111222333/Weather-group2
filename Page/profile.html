@@ -27,7 +27,7 @@
                     </a>
                 </li>
 
-                <li><a href="../index.html"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span
+                <li><a href="../../index.html"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span
                             class="title">Home</span></a></li>
                 <li><a href="forecast.html"><span class="icon"><ion-icon name="cloud-outline"></ion-icon></span><span
                             class="title">Forecast</span></a></li>
@@ -37,14 +37,11 @@
                             class="title">Location</span></a></li>
                 <li><a href="calendar.html"><span class="icon"><ion-icon name="calendar-outline"></ion-icon></span><span
                             class="title">Calendar</span></a></li>
-                <li>
-                    <a href="add-new-account.html">
-                        <span class="icon">
-                            <ion-icon name="person-add-outline"></ion-icon>
-                        </span>
-                        <span class="title">Add new account</span>
-                    </a>
-                </li>
+                <li><a href="./post.html"><span class="icon"><ion-icon name="add-outline"></ion-icon></span><span
+                            class="title">Create Post</span></a></li>
+                <li><a href="add-new-account.html"><span class="icon"><ion-icon
+                                name="person-add-outline"></ion-icon></span><span class="title">Add new
+                            account</span></a></li>
             </ul>
         </div>
 
@@ -52,16 +49,22 @@
             <nav>
                 <div class="topbar">
                     <div class="group-menu-and-search">
-                        <span class="icon">
-                            <img id="image-logo-responsive" src="/assets/image-icon/user-profile-icon.svg"
-                                alt="Weather World Logo">
-                        </span>
-                        <div class="toggle"><ion-icon name="menu-outline"></ion-icon></div>
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
                         <div class="search">
-                            <label>
-                                <input type="search" placeholder="Search here" aria-label="Search">
-                                <ion-icon name="search-outline"></ion-icon>
+                            <label class="search-wrapper">
+                                <input type="search" onclick="getWeather()" id="search-input"
+                                    placeholder="Search weather by city..." aria-label="Search Weather">
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
                             </label>
+                            <div id="suggestions" class="suggestions"></div>
                         </div>
                     </div>
                     <div class="group-notif-profile">
@@ -100,17 +103,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">👤Name</label>
                             <input type="text" id="name" placeholder="Enter your name" required aria-label="Name">
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">📧Email</label>
                             <input type="email" id="email" placeholder="Enter your email" required aria-label="Email">
                         </div>
 
                         <div class="form-group">
-                            <label for="location">Location</label>
+                            <label for="location">📍Location</label>
                             <input type="text" id="location" placeholder="Enter your location" required
                                 aria-label="Location">
                         </div>

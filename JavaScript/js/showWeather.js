@@ -74,9 +74,7 @@ function displayCurrentWeather(data) {
 
     box.innerHTML = `
        <h2>Today's Weather from Cambodia</h2>
-       
         <div class="weather-card">
-     
             <h2 style="color: #f5f5f5ff;">${data.name}, ${data.sys.country}</h2>
             <img src="${icon}">
             <p><strong>${data.main.temp}${tempUnit}</strong> (Feels like ${data.main.feels_like}${tempUnit})</p>
@@ -93,7 +91,10 @@ function displayCurrentWeather(data) {
             </div>
         </div>
     `;
+
+
 }
+
 
 /* ===================== FORECAST ===================== */
 function displayForecast(data) {
@@ -169,3 +170,5 @@ document.getElementById('search-button')?.addEventListener('click', () =>
 );
 
 document.addEventListener('DOMContentLoaded', loadStoredWeatherData);
+
+
