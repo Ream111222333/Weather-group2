@@ -27,13 +27,21 @@
                     </a>
                 </li>
 
-                <li><a href="../../index.html"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span class="title">Home</span></a></li>
-                <li><a href="forecast.html"><span class="icon"><ion-icon name="cloud-outline"></ion-icon></span><span class="title">Forecast</span></a></li>
-                <li><a href="analytic.html"><span class="icon"><ion-icon name="analytics-outline"></ion-icon></span><span class="title">Analytic</span></a></li>
-                <li><a href="location.html"><span class="icon"><ion-icon name="location-outline"></ion-icon></span><span class="title">Location</span></a></li>
-                <li><a href="calendar.html"><span class="icon"><ion-icon name="calendar-outline"></ion-icon></span><span class="title">Calendar</span></a></li>
-                <li><a href="./post.html"><span class="icon"><ion-icon name="add-outline"></ion-icon></span><span class="title">Create Post</span></a></li>
-                <li><a href="add-new-account.html"><span class="icon"><ion-icon name="person-add-outline"></ion-icon></span><span class="title">Add new account</span></a></li>
+                <li><a href="../../index.html"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span
+                            class="title">Home</span></a></li>
+                <li><a href="forecast.html"><span class="icon"><ion-icon name="cloud-outline"></ion-icon></span><span
+                            class="title">Forecast</span></a></li>
+                <li><a href="analytic.html"><span class="icon"><ion-icon
+                                name="analytics-outline"></ion-icon></span><span class="title">Analytic</span></a></li>
+                <li><a href="location.html"><span class="icon"><ion-icon name="location-outline"></ion-icon></span><span
+                            class="title">Location</span></a></li>
+                <li><a href="calendar.html"><span class="icon"><ion-icon name="calendar-outline"></ion-icon></span><span
+                            class="title">Calendar</span></a></li>
+                <li><a href="./post.html"><span class="icon"><ion-icon name="add-outline"></ion-icon></span><span
+                            class="title">Create Post</span></a></li>
+                <li><a href="add-new-account.html"><span class="icon"><ion-icon
+                                name="person-add-outline"></ion-icon></span><span class="title">Add new
+                            account</span></a></li>
             </ul>
         </div>
 
@@ -41,24 +49,33 @@
             <nav>
                 <div class="topbar">
                     <div class="group-menu-and-search">
-                        <span class="icon">
-                            <img id="image-logo-responsive" src="/assets/image-icon/user-profile-icon.svg" alt="Weather World Logo">
-                        </span>
-                        <div class="toggle"><ion-icon name="menu-outline"></ion-icon></div>
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
                         <div class="search">
-                            <label>
-                                <input type="search" placeholder="Search here" aria-label="Search">
-                                <ion-icon name="search-outline"></ion-icon>
+                            <label class="search-wrapper">
+                                <input type="search" onclick="getWeather()" id="search-input"
+                                    placeholder="Search weather by city..." aria-label="Search Weather">
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
                             </label>
+                            <div id="suggestions" class="suggestions"></div>
                         </div>
                     </div>
                     <div class="group-notif-profile">
                         <a href="./notification.html">
-                            <div class="notification"><ion-icon name="notifications-outline" id="notification"></ion-icon></div>
+                            <div class="notification"><ion-icon name="notifications-outline"
+                                    id="notification"></ion-icon></div>
                         </a>
                         <a href="./profile.html">
                             <div class="user">
-                                <img id="profile-icon" src="../../assets/image/none_profile.png" alt="User Profile Icon">
+                                <img id="profile-icon" src="../../assets/image/none_profile.png"
+                                    alt="User Profile Icon">
                             </div>
                         </a>
                     </div>
@@ -78,8 +95,10 @@
                         <div class="form-group">
                             <label for="profile-pic">Profile Picture</label>
                             <div class="profile-pic-preview">
-                                <img src="../../assets/image/none_profile.png" alt="Current Profile Picture" id="profile-pic-preview">
-                                <input type="file" id="profile-pic" accept="image/*" aria-label="Upload Profile Picture">
+                                <img src="../../assets/image/none_profile.png" alt="Current Profile Picture"
+                                    id="profile-pic-preview">
+                                <input type="file" id="profile-pic" accept="image/*"
+                                    aria-label="Upload Profile Picture">
                             </div>
                         </div>
 
@@ -95,7 +114,8 @@
 
                         <div class="form-group">
                             <label for="location">📍Location</label>
-                            <input type="text" id="location" placeholder="Enter your location" required aria-label="Location">
+                            <input type="text" id="location" placeholder="Enter your location" required
+                                aria-label="Location">
                         </div>
 
                         <div class="form-actions">
@@ -108,7 +128,8 @@
 
             <div class="profile">
                 <div class="profile-header">
-                    <img id="profile" src="../../assets/image/none_profile.png" alt="User Profile Picture" class="profile-img">
+                    <img id="profile" src="../../assets/image/none_profile.png" alt="User Profile Picture"
+                        class="profile-img">
                     <h2 id="profile-name" class="profile-name name">User</h2>
                 </div>
 
@@ -137,7 +158,7 @@
                 </div>
             </div>
 
-           
+
         </div>
     </div>
 
