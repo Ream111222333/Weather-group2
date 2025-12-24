@@ -8,6 +8,7 @@
     <title>Wonder Weather</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/forecast.css">
 </head>
 
 <body>
@@ -74,6 +75,85 @@
             </ul>
         </div>
     </div>
+    <button onclick="setBg('sunny')">Sunny</button>
+    <button onclick="setBg('rainy')">Rainy</button>
+    <button onclick="setBg('storm')">Storm</button>
+
+    <!-- =============== Weather Dashboard ================ -->
+        <div class="weather-container">
+        <div class="current-weather">
+            <div class="left">
+            <p class="city">📍 CITY</p>
+            <h1 class="date">MAY 5</h1>
+            <h2 class="time">12:37</h2>
+            <p class="status">CLOUDY</p>
+            </div>
+
+            <div class="center">
+            <img src="../image/cloud-sun.png" alt="weather icon">
+            </div>
+
+            <div class="right">
+            <h1 class="temp">+20°C</h1>
+            <p>Pressure: 1021 hPa</p>
+            <p>Sunrise: 6:38</p>
+            <p>Sunset: 18:03</p>
+            </div>
+        </div>
+
+        <!-- ========== Weekly Forecast ========== -->
+        <div class="forecast">
+            <div class="day">
+            <p>SUN</p>
+            <img src="../image/sun.png">
+            <p>20°</p>
+            <small>10°</small>
+            </div>
+
+            <div class="day">
+            <p>MON</p>
+            <img src="../image/rain.png">
+            <p>17°</p>
+            <small>8°</small>
+            </div>
+
+            <div class="day">
+            <p>TUE</p>
+            <img src="../image/cloud-sun.png">
+            <p>18°</p>
+            <small>7°</small>
+            </div>
+
+            <div class="day">
+            <p>WED</p>
+            <img src="../image/rain.png">
+            <p>16°</p>
+            <small>6°</small>
+            </div>
+
+            <div class="day">
+            <p>THU</p>
+            <img src="../image/cloud-sun.png">
+            <p>18°</p>
+            <small>9°</small>
+            </div>
+
+            <div class="day">
+            <p>FRI</p>
+            <img src="../image/cloud.png">
+            <p>19°</p>
+            <small>10°</small>
+            </div>
+
+            <div class="day">
+            <p>SAT</p>
+            <img src="../image/storm.png">
+            <p>17°</p>
+            <small>5°</small>
+            </div>
+        </div>
+        </div>
+
 
 
 

@@ -1,0 +1,75 @@
+.weather-container {
+  margin-left: 300px; /* match sidebar width */
+  padding: 30px;
+  background: linear-gradient(to bottom, #5a8dee, #79b7ff);
+  min-height: 100vh;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.current-weather .left h1 {
+  font-size: 28px;
+}
+
+.current-weather .time {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.current-weather img {
+  width: 150px;
+}
+
+.current-weather .temp {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+/* ===== Forecast ===== */
+.forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 60px;
+  text-align: center;
+  width: 120px;
+}
+
+.day img {
+  width: 40px;
+  margin: 10px 0;
+}
+
+.day p {
+  font-size: 18px;
+}
+
+.day small {
+  opacity: 0.8;
+}
+.weather-container.sunny {
+  background: linear-gradient(to bottom, #FDB813, #87CEEB);
+}
+
+.weather-container.cloudy {
+  background: linear-gradient(to bottom, #5A8DEE, #A7C7E7);
+}
+
+.weather-container.rainy {
+  background: linear-gradient(to bottom, #4B79A1, #283E51);
+}
+
+.weather-container.storm {
+  background: linear-gradient(to bottom, #232526, #414345);
+}
