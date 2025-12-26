@@ -1140,12 +1140,22 @@ h5 {
     padding: 12px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.weather-info ion-icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    color: #38bdf8;
+}
+
 
 .weather-info span {
     display: block;
     font-size: 0.8rem;
     color: #cbd5f5;
+}
+.weather-info span:hover {
+    color: #ffffff;
 }
 
 .weather-info strong {
@@ -1163,7 +1173,7 @@ h5 {
     border-radius: 12px;
     border: none;
     background: #38bdf8;
-    color: #020617;
+    color: #020f48;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
