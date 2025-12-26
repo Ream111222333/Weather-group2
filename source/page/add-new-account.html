@@ -14,6 +14,8 @@
 
     <!-- ======= Favicon ====== -->
     <link rel="shortcut icon" href="../../assets/image-icon/logo-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -153,17 +155,40 @@
                                 Login 🔐
                             </button>
                             <div id="register-message" style="margin-bottom: 10px; font-weight: bold;"></div>
+
+                            <div class="social-login">
+                                <div class="divider">
+                                    <span>Continue with</span>
+                                </div>
+
+                                <div class="social-group">
+                                    <a href="#" class="social-btn facebook">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+
+                                    <a href="#" class="social-btn google">
+                                        <i class="fa-brands fa-google"></i>
+                                    </a>
+
+                                    <a href="#" class="social-btn linkedin">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+
                         </a>
                     </form>
                 </div>
                 <div class="toggle-container">
                     <div class="toggle-middle">
                         <div class="toggle-panel toggle-left">
+                            <img src="/assets/image-icon/weather-logo.svg" style="height: 100px;width: 100px;" alt="">
                             <h1>Welcome Back!</h1>
                             <p>Enter your personal details to use all of the site's features</p>
                             <button class="hidden" id="login">Sign Up</button>
                         </div>
                         <div class="toggle-panel toggle-right">
+                            <img src="/assets/image-icon/weather-logo.svg" style="height: 100px;width: 100px; " alt="">
                             <h1>Hello, Friend!</h1>
                             <p>Register with your personal details to use all of the site's features</p>
                             <button class="hidden" id="register">Register</button>
@@ -175,7 +200,7 @@
         </div>
 
     </div>
-    
+
     <!-- =========== Scripts =========  -->
     <script src="../js/page-js/add-new-account.js"></script>
     <script src="../js/index.js"></script>
