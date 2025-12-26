@@ -61,7 +61,8 @@
             if (validateRegisterForm()) {
                 alert("Form submitted successfully!");
                 // Here you can submit the form or redirect
-                // e.g., document.forms[0].submit();
+                window.location.href = "../../index.html";
+
             }
         });
 
@@ -82,6 +83,7 @@
             e.preventDefault();
             if (validateLoginForm()) {
                 alert("Login successful!");
+                window.location.href = "../../index.html";
                 // Here you can handle login
             }
         });
