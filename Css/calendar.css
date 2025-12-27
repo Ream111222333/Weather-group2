@@ -1,0 +1,149 @@
+/* ================= Calendar Weather ================= */
+.calendar-box {
+  margin-left: 300px;
+  padding: 30px;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+.calendar-box h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+
+/* ================= Today Panel ================= */
+.today-box {
+  background: linear-gradient(to bottom, #21b8d3, #227bc4);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.today-box h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.today-box h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.big-card {
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 15px 0;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sun-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* ================= Days Header ================= */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+}
+
+.days .day {
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 0;
+  background: var(--gray);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+/* ================= Weather Grid ================= */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+
+/* ================= Weather Card ================= */
+.weather-grid .card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weather-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.weather-grid .card p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.weather-grid .card img {
+  width: 60px;
+  height: auto;
+}
+
+.weather-grid .card span {
+  display: block;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.weather-grid .card small {
+  color: #777;
+}
+
+/* Highlight special days */
+.weather-grid .card.dark {
+  background: linear-gradient(to bottom, #d1c4e9, #404041);
+  color: #222;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 991px) {
+  .calendar-box {
+    margin-left: 0;
+  }
+
+  .weather-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .today-box h1 {
+    font-size: 2.2rem;
+  }
+}
