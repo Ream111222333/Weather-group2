@@ -27,6 +27,7 @@ body {
     background-color: var(--white);
     border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
 }
 
 .create-post h2 {
@@ -40,12 +41,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
+
 }
 
 .form-group label {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--blue);
+
 }
 
 .form-group input,
@@ -92,10 +95,14 @@ body {
     max-width: 820px;
     margin: 40px auto;
     padding: 30px;
-    background-color: var(--white);
+    background-color: transparent;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 20px var(--cloudColor);
+    border: rgb(227, 240, 240) 2px solid;
+    overflow: hidden;
 }
+
+
 
 .profile-header {
     text-align: center;
@@ -125,6 +132,12 @@ body {
 /* Profile Details */
 .profile-details {
     width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 50px;
+    overflow: hidden;
+
 }
 
 .profile-detail-item {
@@ -132,6 +145,7 @@ body {
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid var(--cloudColor);
+
 }
 
 .profile-detail-item h4 {
@@ -184,7 +198,9 @@ body {
     padding: 30px;
     background-color: var(--white);
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 20px var(--cloudColor);
+    border: rgb(227, 240, 240) 2px solid;
+    overflow: hidden;
 }
 
 .edit-profile-header h1 {
