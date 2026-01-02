@@ -142,7 +142,6 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
     text-align: center;
-    margin-left: 40px;
 }
 
 .temperature-chart h2 {
