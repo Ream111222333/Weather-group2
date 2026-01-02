@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             const response = await fetch(`http://localhost:3000/weather?city=${city}`);
             const data = await response.json();
-            
+
             // Store the fetched data in local storage
             saveToLocalStorage('weatherData', data);
-            
+
             // Extract weekly temperatures and save them in local storage
             const weeklyTemperatures = [
                 data.daily[0].temp.day,
@@ -87,9 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayWeatherFromLocalStorage() {
         const weatherData = getFromLocalStorage('weatherData');
 
+
         if (weatherData) {
             displayWeather(weatherData);
-            
+
             // Retrieve weekly temperatures from local storage
             const weeklyTemperatures = getFromLocalStorage('weeklyTemperatures');
             if (weeklyTemperatures) {

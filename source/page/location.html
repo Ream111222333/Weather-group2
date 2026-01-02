@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonder Weather</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/location.css">
+    <!-- Leaflet Map Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img id="image-logo" src="/assets/image-icon/weather-logo.svg" alt="logo-weather-app">
+                        </span>
+                        <span class="title">Weather World</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="forecast.html">
+                        <span class="icon">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </span>
+                        <span class="title">Forecast</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytic.html">
+                        <span class="icon">
+                            <ion-icon name="analytics-outline"></ion-icon>
+                        </span>
+                        <span class="title">Analytic</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="location.html">
+                        <span class="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </span>
+                        <span class="title">Location</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="calendar.html">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="title">Calendar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="add-new-account.html">
+                        <span class="icon">
+                            <ion-icon name="person-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add new account</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ====================================main================================================ -->
+        <div class="main">
+            <div class="topbar">
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="🔍 Search location here ... " aria-label="Search">
+                    </label>
+                </div>
+            </div>
+            <div class="map-section">
+                <div id="map" style="width: 100%; height: 500px; border-radius: 10px;"></div>
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="zoom-in">+</button>
+                    <button class="zoom-out">-</button>
+                    <button class="navigate">➤</button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div id="search-results"
+                style="margin-top: 20px; padding: 20px; background: #f5f5f5; border-radius: 10px; display: none;">
+
+                <h3>Search Results</h3>
+                <div id="results-list"></div>
+            </div>
+
+            <!-- Weather Information Section -->
+            <div id="weather-section" style="display: none;">
+                <div id="weather-display" class="weather-display">
+                    <div class="weather-card">
+                        <div class="weather-header">
+                            <h2 id="weather-location"></h2>
+                            <p id="weather-type"></p>
+                        </div>
+                        <div class="weather-content">
+                            <div class="temperature-box">
+                                <span id="weather-temperature" class="temperature-value"></span>
+                                <span class="temperature-unit">°C</span>
+                            </div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Humidity</span>
+                                    <span id="weather-humidity" class="detail-value">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Wind Speed</span>
+                                    <span id="weather-wind" class="detail-value">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pressure</span>
+                                    <span id="weather-pressure" class="detail-value">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Feels Like</span>
+                                    <span id="weather-feels" class="detail-value">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <script src="../js/index.js"></script>
+            <script src="../js/page-js/location.js"></script>
+            <!-- ====== ionicons ======= -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

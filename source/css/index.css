@@ -1075,6 +1075,114 @@ h5 {
     height: 34px;
   }
 }
+/* ================= Weather Card Styles ================== */
+.weather-container {
+    max-width: 780px;
+    margin: 30px auto;
+    padding: 35px;
+    background: linear-gradient(160deg, #1e293b, #4166bd);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.weather-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.weather-desc {
+    color: #cbd5f5;
+    text-transform: capitalize;
+    font-size: 0.95rem;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.weather-icon {
+    width: 130px;
+}
+
+.weather-temp {
+    text-align: right;
+}
+
+.weather-temp .temp {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.weather-temp .unit {
+    font-size: 1.4rem;
+    vertical-align: top;
+}
+
+.feels {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.weather-info div {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.weather-info ion-icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    color: #38bdf8;
+}
+
+
+.weather-info span {
+    display: block;
+    font-size: 0.8rem;
+    color: #cbd5f5;
+}
+.weather-info span:hover {
+    color: #ffffff;
+}
+
+.weather-info strong {
+    font-size: 1.1rem;
+}
+
+.weather-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.weather-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #38bdf8;
+    color: #020f48;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.weather-actions button:hover {
+    background: #0ea5e9;
+}
+
 
 
 

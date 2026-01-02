@@ -1,0 +1,253 @@
+/* Search Form Styles */
+.search-container {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#city-input {
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 300px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#city-input:focus {
+    border-color: #4CAF50;
+}
+
+#search-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#search-btn:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+}
+
+#error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff4444;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.current {
+    display: flex;            /*  ✅ horizontal*/
+    flex-direction: row;        /* default, but clear */
+    align-items: center;         /*vertical alignment */
+    justify-content: space-between;
+
+    background: linear-gradient(to bottom, #10c6f4, #0aa1d6);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* LEFT */
+.current-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.city{
+  color: black;
+}
+.status{
+  color: black;
+}
+/* CENTER */
+.current-center img {
+    width: 110px;
+}
+
+/* RIGHT */
+.current-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: right;
+    color: black;
+}
+
+.weather{
+  margin-left: 300px; /* match sidebar width */
+  padding: 30px;
+  background: linear-gradient(to bottom, #5a8dee, #79b7ff);
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: grid;
+}
+
+.current {
+    background: linear-gradient(to bottom, #10c6f4, #0aa1d6);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* LEFT */
+.current-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* CENTER */
+.current-center {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-center img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+}
+
+/* RIGHT */
+.current-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.temp {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* ===== Forecast ===== */
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+
+.forecast-day .day {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 60px;
+  text-align: center;
+  width: 120px;
+}
+
+.day img {
+  width: 40px;
+  margin: 10px 0;
+}
+
+.day p {
+  font-size: 18px;
+}
+
+.day small {
+  opacity: 0.8;
+}
+.weather.sunny {
+  background: linear-gradient(to bottom, #FDB813, #87CEEB);
+}
+
+.weather.cloudy {
+  background: linear-gradient(to bottom, #5A8DEE, #A7C7E7);
+}
+
+.weather.rainy {
+  background: linear-gradient(to bottom, #4B79A1, #283E51);
+}
+
+.weather.storm {
+  background: linear-gradient(to bottom, #232526, #414345);
+} 
+
+/* Left */
+.current-left p,
+.current-right p {
+    margin: 6px 0;
+}
+
+.current-left h1 {
+    font-size: 28px;
+}
+
+.current-left h2 {
+    font-size: 22px;
+}
+
+/* Center */
+.current-center img {
+    width: 120px;
+}
+
+
+/* Right */
+.current-right {
+    text-align: right;
+}
+
+.current-right .temp {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+/* ===== Forecast (Horizontal Cards) ===== */
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+.forecast-day {
+  flex: 1;
+  background: #97c6f1;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+}
+
+.forecast-day img {
+  width: 45px;
+  margin: 10px 0;
+}
+
+.forecast-day p {
+  margin: 5px 0;
+  font-size: 14px;
+}

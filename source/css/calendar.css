@@ -3,7 +3,7 @@
   margin-left: 300px;
   padding: 30px;
   min-height: 100vh;
-  background: var(--white);
+ background: linear-gradient(to bottom, #0ed5f8, #78bdf5);
 }
 
 .calendar-box h3 {
@@ -117,8 +117,8 @@
 
 /* Highlight special days */
 .weather-grid .card.dark {
-  background: linear-gradient(to bottom, #d1c4e9, #404041);
-  color: #222;
+  background: linear-gradient(to bottom, #3a3a3a, #050507);
+  color: #f5f3f3;
 }
 
 /* ================= Responsive ================= */

@@ -65,35 +65,56 @@ function loadStoredWeatherData() {
         getWeather();
     }
 }
-
-/* ===================== DISPLAY CURRENT ===================== */
 function displayCurrentWeather(data) {
     const box = document.getElementById('weather-detail-today');
-    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
     const tempUnit = unit === 'metric' ? '°C' : '°F';
 
     box.innerHTML = `
-       <h2>Today's Weather from Cambodia</h2>
-        <div class="weather-card">
-            <h2 style="color: #f5f5f5ff;">${data.name}, ${data.sys.country}</h2>
-            <img src="${icon}">
-            <p><strong>${data.main.temp}${tempUnit}</strong> (Feels like ${data.main.feels_like}${tempUnit})</p>
-            <p>${data.weather[0].description}</p>
-            <p>💧 Humidity: ${data.main.humidity}%</p>
-            <p>💨 Wind: ${data.wind.speed}</p>
-            <p>🌅 Sunrise: ${formatTime(data.sys.sunrise)}</p>
-            <p>🌇 Sunset: ${formatTime(data.sys.sunset)}</p>
+    <h2>Today's Weather</h2>
+        <div class="weather-container">
+            <div class="weather-header">
+                <h1>${data.name}, ${data.sys.country}</h1>
+                <p class="weather-desc">${data.weather[0].description}</p>
+            </div>
+
+            <div class="weather-main">
+                <img src="${icon}" class="weather-icon">
+                <div class="weather-temp">
+                    <span class="temp">${Math.round(data.main.temp)}</span>
+                    <span class="unit">${tempUnit}</span>
+                    <p class="feels">Feels like ${Math.round(data.main.feels_like)}${tempUnit}</p>
+                </div>
+            </div>
+
+            <div class="weather-info">
+                <div>
+                    <span>💧 Humidity</span>
+                    <strong>${data.main.humidity}%</strong>
+                </div>
+                <div>
+                    <span>💨 Wind</span>
+                    <strong>${data.wind.speed} m/s</strong>
+                </div>
+                <div>
+                    <span>🌅 Sunrise</span>
+                    <strong>${formatTime(data.sys.sunrise)}</strong>
+                </div>
+                <div>
+                    <span>🌇 Sunset</span>
+                    <strong>${formatTime(data.sys.sunset)}</strong>
+                </div>
+            </div>
 
             <div class="weather-actions">
-                <button onclick="toggleUnit()">Toggle °C / °F</button>
+                <button onclick="toggleUnit()">°C / °F</button>
                 <button onclick="saveFavorite('${data.name}')">⭐ Save</button>
                 <button onclick="getWeather('${data.name}')">🔄 Refresh</button>
             </div>
         </div>
     `;
-
-
 }
+
 
 
 /* ===================== FORECAST ===================== */
