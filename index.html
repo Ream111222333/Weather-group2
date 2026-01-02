@@ -8,10 +8,8 @@
     <title>Weather World</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="source/css/index.css">
-    <link rel="stylesheet" href="css/search-styles.css">
+    <link rel="stylesheet" href="source/css/search.css">
     <!-- ======= Favicon ====== -->
-    <link rel="shortcut icon" href="./assets/image-icon/weather-logo.svg" type="image/svg+xml">
-</head>
 
 <body>
 
@@ -22,7 +20,8 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <img id="image-logo" src="./assets/image-icon/weather-logo.svg" alt="logo-weather-app" style="width: 40px; height: 40px;">
+                            <img id="image-logo" src="./assets/image-icon/weather-logo.svg" alt="logo-weather-app"
+                                style="width: 40px; height: 40px;">
                         </span>
                         <span class="title">Weather World</span>
                     </a>
@@ -87,17 +86,19 @@
                             <ion-icon name="menu-outline"></ion-icon>
                         </div>
                         <div class="search">
-                            <label class="search-wrapper">
-                                <input type="search" onclick="getWeather()" id="search-input" placeholder="Search weather by city..." aria-label="Search Weather">
-                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
+                            <div class="search-wrapper">
+                                <input type="search" id="search-input" placeholder="Search weather by city..."
+                                    aria-label="Search Weather" />
+
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search"
+                                    onclick="getWeather()">
+                                    <ion-icon name="search-outline"></ion-icon>
                                 </button>
-                            </label>
+                            </div>
+
                             <div id="suggestions" class="suggestions"></div>
                         </div>
+
                     </div>
                     <div class="group-notif-profile">
                         <a href="source/page/notification.html">
@@ -107,7 +108,8 @@
                         </a>
                         <a href="source/page/profile.html">
                             <div class="user">
-                                <img id="profile-icon" src="./assets/image-icon/user-profile-icon.svg" alt="user-profile" style="width: 40px; height: 40px;">
+                                <img id="profile-icon" src="./assets/image-icon/user-profile-icon.svg"
+                                    alt="user-profile" style="width: 40px; height: 40px;">
                             </div>
                         </a>
                     </div>
@@ -117,18 +119,20 @@
 
         <!-- ========================= Main ==================== -->
         <div class="main">
-            <div class="cardBox"></div>   
+            <div class="cardBox"></div>
             <div class="current-weather">
                 <div class="weather-detail-today" id="weather-detail-today"></div>
                 <div class="weather-detail-seven-day" id="weather-detail-seven-day"></div>
                 <div id="loading-indicator" style="display: none;">Loading...</div>
             </div>
         </div>
-     <!-- ============/=============== -->
+        <!-- ============/=============== -->
     </div>
+    <script src="./source/js/storageManager.js"></script>
     <script src="./source/js/index.js"></script>
     <script src="./source/js/page-js/showWeather.js"></script>
     <script src="./source/js/page-js/profile.js"></script>
+    <script src="./source/js/page-js/search.js"></script>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

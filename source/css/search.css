@@ -1,0 +1,122 @@
+/* ================= SEARCH CONTAINER ================= */
+.search {
+    position: relative;
+    width: 900px;
+    margin-left: 20px;
+}
+
+/* ================= SEARCH BAR ================= */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #f3f6ff);
+    border-radius: 50px;
+    padding: 8px 10px;
+    border: 1px solid #e1e7f5;
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.15);
+    transition: 0.3s ease;
+}
+
+.search-wrapper:focus-within {
+    border-color: #fbfbfb;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+}
+
+/* ================= INPUT ================= */
+.search-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.search-wrapper input::placeholder {
+    color: #3e4b7d;
+}
+
+/* ================= SEARCH BUTTON ================= */
+.search-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #869af3, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.search-btn ion-icon {
+    font-size: 20px;
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
+}
+
+.search-btn:active {
+    transform: scale(0.95);
+}
+
+/* ================= SUGGESTIONS ================= */
+.suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    max-height: 260px;
+    overflow-y: auto;
+    display: none;
+    z-index: 999;
+}
+
+.suggestions.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= SUGGESTION ITEM ================= */
+.suggestion-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+    transition: 0.2s;
+}
+
+.suggestion-item:hover {
+    background: #f4f6ff;
+    color: #667eea;
+    padding-left: 22px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .search {
+        width: 100%;
+        margin-left: 0;
+    }
+}

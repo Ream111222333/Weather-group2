@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather World</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/forecast.css">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+
+<body>
+
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img id="image-logo" src="../../Assets/image-icon/weather-logo.svg" alt="logo-weather-app"
+                                style="width: 40px; height: 40px;">
+                        </span>
+                        <span class="title">Weather World</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="forecast.html">
+                        <span class="icon">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </span>
+                        <span class="title">Forecast</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytic.html">
+                        <span class="icon">
+                            <ion-icon name="analytics-outline"></ion-icon>
+                        </span>
+                        <span class="title">Analytic</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="location.html">
+                        <span class="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </span>
+                        <span class="title">Location</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="calendar.html">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="title">Calendar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="add-new-account.html">
+                        <span class="icon">
+                            <ion-icon name="person-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add new account</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <header class="head">
+            <nav>
+                <div class="topbar">
+                    <div class="group-menu-and-search">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                        <div class="search">
+                            <label class="search-wrapper">
+                                <input type="search" onclick="getWeather()" id="search-input"
+                                    placeholder="Search weather by city..." aria-label="Search Weather">
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
+                            </label>
+                            <div id="suggestions" class="suggestions"></div>
+                        </div>
+                    </div>
+                    <div class="group-notif-profile">
+                        <a href="source/page/notification.html">
+                            <div class="notification">
+                                <ion-icon name="notifications-outline" id="notification"></ion-icon>
+                            </div>
+                        </a>
+                        <a href="source/page/profile.html">
+                            <div class="user">
+                                <img id="profile-icon" src="./assets/image-icon/user-profile-icon.svg"
+                                    alt="user-profile" style="width: 40px; height: 40px;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="weather">
+            <div class="current">
+                <div class="current-left">
+                    <p class="city">📍 City</p>
+                    <h1>MAY 5</h1>
+                    <h2>12:37</h2>
+                    <p class="status">CLOUDY</p>
+                </div>
+
+                <div class="current-center">
+                    <img src="/assets/image-icon/cloud-sun.png" alt="Weather Icon">
+                </div>
+
+                <div class="current-right">
+                    <p>Pressure: 1021 hPa</p>
+                    <p>Sunrise: 6:38</p>
+                    <p>Sunset: 18:03</p>
+                    <h2 class="temp">+20°C</h2>
+                </div>
+            </div>
+
+
+            <div class="forecast">
+                <div class="forecast-day">
+                    <p>SUN</p>
+                    <img src="sun.png" alt="Sunny">
+                    <p>20°C / 10°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>MON</p>
+                    <img src="rain.png" alt="Rainy">
+                    <p>17°C / 8°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>TUE</p>
+                    <img src="cloud-sun.png" alt="Partly Cloudy">
+                    <p>18°C / 7°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>WED</p>
+                    <img src="rain.png" alt="Rainy">
+                    <p>16°C / 6°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>THU</p>
+                    <img src="cloud-sun.png" alt="Partly Cloudy">
+                    <p>18°C / 9°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>FRI</p>
+                    <img src="cloud.png" alt="Cloudy">
+                    <p>19°C / 10°C</p>
+                </div>
+                <div class="forecast-day">
+                    <p>SAT</p>
+                    <img src="storm.png" alt="Storm">
+                    <p>17°C / 5°C</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../js/index.js"></script>
+    <script src="../js/page-js/forecast.js"></script>
+    <script src="../js/page-js/showWeather.js"></script>
+    <script src="../js/page-js/profile.js"></script>
+    <script src="../js/page-js/search.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

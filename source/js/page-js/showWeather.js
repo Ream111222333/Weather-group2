@@ -45,11 +45,47 @@ async function getWeather(cityInput) {
 
 /* ===================== STORAGE ===================== */
 function storeWeatherData(current, forecast) {
-    localStorage.setItem('weatherData', JSON.stringify({
+    const weatherData = {
         current,
         forecast,
-        time: Date.now()
+        time: Date.now(),
+        city: current.name,
+        country: current.sys.country
+    };
+    localStorage.setItem('weatherData', JSON.stringify(weatherData));
+    
+    // Store city-specific data for history
+    const cityKey = `weather_${current.name.toLowerCase()}`;
+    localStorage.setItem(cityKey, JSON.stringify({
+        current,
+        forecast,
+        timestamp: Date.now()
     }));
+    
+    // Add to weather history
+    addToWeatherHistory(current.name);
+    
+    console.log('✓ Weather data stored in localStorage:', current.name);
+}
+
+/* ===================== HISTORY ===================== */
+function addToWeatherHistory(city) {
+    let history = JSON.parse(localStorage.getItem('weatherHistory')) || [];
+    const entry = {
+        city,
+        timestamp: Date.now()
+    };
+    
+    // Remove duplicate if exists
+    history = history.filter(h => h.city.toLowerCase() !== city.toLowerCase());
+    
+    // Add new entry at the beginning
+    history.unshift(entry);
+    
+    // Keep only last 20 searches
+    history = history.slice(0, 20);
+    
+    localStorage.setItem('weatherHistory', JSON.stringify(history));
 }
 
 /* ===================== LOAD CACHE ===================== */
@@ -58,10 +94,14 @@ function loadStoredWeatherData() {
     if (!saved) return getWeather();
 
     const data = JSON.parse(saved);
-    if (Date.now() - data.time < 3600000) {
+    const cacheExpiry = 3600000; // 1 hour in milliseconds
+    
+    if (Date.now() - data.time < cacheExpiry) {
+        console.log('✓ Loading cached weather data for:', data.city);
         displayCurrentWeather(data.current);
         displayForecast(data.forecast);
     } else {
+        console.log('✗ Cache expired, fetching fresh data...');
         getWeather();
     }
 }

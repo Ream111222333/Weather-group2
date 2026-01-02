@@ -387,34 +387,6 @@ body {
 }
 
 
-/* ===================== Main ===================== */
-.suggestions {
-  max-height: 200px;
-  width: 100%;
-  overflow-y: auto;
-  position: absolute;
-  /* Adjust as needed */
-  background: white;
-  /* Ensure it's visible */
-  border: none;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.suggestion-item {
-  padding: 20px;
-  cursor: pointer;
-}
-
-.suggestion-item:hover {
-  background-color: #f0f0f0;
-  /* Highlight on hover */
-}
-
 .group-menu-and-search,
 .group-notif-profile {
 
@@ -466,7 +438,8 @@ body {
 
 .topbar {
   width: 100%;
-  height: 60px;
+  background: linear-gradient(135deg, #5d6fbe, #b973ff);
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -483,36 +456,6 @@ body {
   font-size: 2.5rem;
   cursor: pointer;
 }
-
-.search {
-  position: relative;
-  width: 1000px;
-  margin: 0 10px;
-}
-
-.search label {
-  position: relative;
-  width: 100%;
-}
-
-.search label input {
-  width: 100%;
-  height: 40px;
-  border-radius: 40px;
-  padding: 5px 20px;
-  padding-left: 35px;
-  font-size: 18px;
-  outline: none;
-  border: 1px solid var(--black2);
-}
-
-.search label ion-icon {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  font-size: 1.2rem;
-}
-
 .user {
   position: relative;
   width: 40px;
@@ -872,209 +815,6 @@ h5 {
   /* Optional, organizes child elements vertically */
 }
 
-
-
-/* =============== Professional Search Styling =============== */
-
-.search {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  margin-top: 20px;
-}
-
-.search-wrapper {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 10px;
-  padding: 10px 16px;
-  border: 2px solid #e0e0e0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.search-wrapper:hover {
-  border-color: #bdbdbd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.search-wrapper:focus-within {
-  border-color: #667eea;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
-}
-
-.search-wrapper input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 15px;
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-weight: 500;
-  padding: 0;
-  letter-spacing: 0.3px;
-}
-
-.search-wrapper input::placeholder {
-  color: #999;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.search-wrapper input::-webkit-search-cancel-button {
-  display: none;
-}
-
-.search-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: white;
-  transition: all 0.2s ease;
-  margin-left: 12px;
-  flex-shrink: 0;
-}
-
-.search-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
-}
-
-.search-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
-}
-
-
-
-.suggestions {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  max-height: 320px;
-  overflow-y: auto;
-  z-index: 1000;
-  display: none;
-  border: 1px solid #f0f0f0;
-}
-
-.suggestions.active {
-  display: block;
-  animation: fadeInUp 0.2s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.suggestions::-webkit-scrollbar {
-  width: 6px;
-}
-
-.suggestions::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.suggestions::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 3px;
-}
-
-.suggestions::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* Suggestion items styling */
-.suggestion-item {
-  padding: 12px 16px;
-  border-bottom: 1px solid #f5f5f5;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-}
-
-.suggestion-item:hover {
-  background-color: #f9f9f9;
-  color: #667eea;
-  padding-left: 20px;
-}
-
-.suggestion-item:active {
-  background-color: #f0f0f0;
-}
-
-/* Search icon in input */
-.search-wrapper::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  width: 16px;
-  height: 25px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') center / contain no-repeat;
-  opacity: 0.6;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .search {
-    max-width: 100%;
-  }
-
-  .search-wrapper {
-    padding: 8px 12px;
-  }
-
-  .search-wrapper input {
-    font-size: 14px;
-  }
-
-  .search-btn {
-    width: 36px;
-    height: 36px;
-    margin-left: 8px;
-  }
-
-  .suggestion-item {
-    padding: 10px 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-wrapper {
-    padding: 8px 10px;
-  }
-
-  .search-btn {
-    width: 34px;
-    height: 34px;
-  }
-}
 /* ================= Weather Card Styles ================== */
 .weather-container {
     max-width: 780px;
