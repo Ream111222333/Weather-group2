@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,20 +83,6 @@
                         <div class="toggle">
                             <ion-icon name="menu-outline"></ion-icon>
                         </div>
-                        <div class="search">
-                            <div class="search-wrapper">
-                                <input type="search" id="search-input" placeholder="Search weather by city..."
-                                    aria-label="Search Weather" />
-
-                                <button type="button" id="search-button" class="search-btn" aria-label="Search"
-                                    onclick="getWeather()">
-                                    <ion-icon name="search-outline"></ion-icon>
-                                </button>
-                            </div>
-
-                            <div id="suggestions" class="suggestions"></div>
-                        </div>
-
                     </div>
                     <div class="group-notif-profile">
                         <a href="source/page/notification.html">
@@ -116,9 +100,23 @@
                 </div>
             </nav>
         </header>
-
         <!-- ========================= Main ==================== -->
+
+
         <div class="main">
+            <div class="search">
+                            <div class="search-wrapper">
+                                <input type="search" id="search-input" placeholder="Search weather by city..."
+                                    aria-label="Search Weather" />
+
+                                <button type="button" id="search-button" class="search-btn" aria-label="Search"
+                                    onclick="getWeather()">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </button>
+                            </div>
+
+                            <div id="suggestions" class="suggestions"></div>
+                        </div>
             <div class="cardBox"></div>
             <div class="current-weather">
                 <div class="weather-detail-today" id="weather-detail-today"></div>

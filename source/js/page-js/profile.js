@@ -1,96 +1,111 @@
-// Profile Display Elements
-const profiPicture = document.getElementById("profile");
-const proPicture = document.getElementById("profile-icon");
-const profileName = document.getElementById("profile-name");
-const namePro = document.getElementById("name-detail");
-const emailProfile = document.getElementById("email-detail");
-const locationProfile = document.getElementById("location-detail");
-const dateProfile = document.getElementById("date-sign");
-// Edit Form Elements
-const loadProfileData = () => {
+// ===================== Profile JS =====================
+
+// Wrap all code in DOMContentLoaded to ensure HTML is loaded
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ---------------- Profile Display Elements ----------------
+  const profilePicture = document.getElementById("profile"); // Main profile image
+  const profileIcon = document.getElementById("profile-icon"); // Topbar icon
+  const profileName = document.getElementById("profile-name");
+  const nameDetail = document.getElementById("name-detail");
+  const emailDetail = document.getElementById("email-detail");
+  const locationDetail = document.getElementById("location-detail");
+  const dateJoined = document.getElementById("date-sign");
+
+  // ---------------- Edit Form Elements ----------------
+  const editForm = document.querySelector(".edit-profile-form");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const locationInput = document.getElementById("location");
+  const profilePicInput = document.getElementById("profile-pic");
+  const profilePicPreview = document.getElementById("profile-pic-preview");
+  const saveButton = document.querySelector(".save-btn");
+  const cancelButton = document.querySelector(".cancel-btn");
+
+  const DEFAULT_PROFILE = "../../assets/image/none_profile.png";
+
+  // ---------------- Load Profile Display ----------------
+  const loadProfileData = () => {
     const data = JSON.parse(localStorage.getItem("registrationData"));
 
-    console.log("Loaded Profile Data:", data); // Debugging line
+    console.log("Loaded Profile Data:", data);
 
-    if (data) {
-        proPicture.src = data.Profile || 'assets/image/none_profile.png'; // Fallback to default image
-        profiPicture.src = data.Profile || 'assets/image/none_profile.png'; // Fallback to default image
-        profileName.textContent = data.Name || "Unknown User";
-        namePro.textContent = data.Name || "Unknown User";
-        emailProfile.textContent = data.Email || "Email not provided";
-        locationProfile.textContent = data.Location || "Location not provided";
-
-        const currentDate = new Date();
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        dateProfile.textContent = ` ${currentDate.toLocaleString(undefined, options)}`;
-    } else {
-        console.log("No profile data found."); // Debugging line
-        profileName.textContent = "No profile data found.";
+    if (!data) {
+      console.warn("No profile data found.");
+      if (profileName) profileName.textContent = "No profile data found.";
+      return;
     }
-};
 
-// Call function to load profile data when the page loads
- loadProfileData();
+    if (profilePicture) profilePicture.src = data.Profile || DEFAULT_PROFILE;
+    if (profileIcon) profileIcon.src = data.Profile || DEFAULT_PROFILE;
+    if (profileName) profileName.textContent = data.Name || "Unknown User";
+    if (nameDetail) nameDetail.textContent = data.Name || "Unknown User";
+    if (emailDetail) emailDetail.textContent = data.Email || "Email not provided";
+    if (locationDetail) locationDetail.textContent = data.Location || "Location not provided";
 
- // Elements for Editing Profile
- const editProfileForm = document.querySelector(".edit-profile-form");
- const nameInput = document.getElementById("name");
- const emailInput = document.getElementById("email");
- const locationInput = document.getElementById("location");
- const profilePicInput = document.getElementById("profile-pic");
- const profilePicPreview = document.getElementById("profile-pic-preview");
- const saveButton = document.querySelector(".save-btn");
- const cancelButton = document.querySelector(".cancel-btn");
+    if (dateJoined) {
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      dateJoined.textContent = currentDate.toLocaleString(undefined, options);
+    }
+  };
 
- // Load existing data into the form
- const loadFormData = () => {
-     const existingData = JSON.parse(localStorage.getItem("registrationData"));
+  loadProfileData();
 
-     if (existingData) {
-         nameInput.value = existingData.Name || "";
-         emailInput.value = existingData.Email || "";
-         locationInput.value = existingData.Location || "";
-         profilePicPreview.src = existingData.Profile || "../../assets/image/none_profile.png";
-         profiPicture.src = existingData.Profile || "../../assets/image/none_profile.png";
-     }
- };
+  // ---------------- Load Form Data ----------------
+  const loadFormData = () => {
+    const existingData = JSON.parse(localStorage.getItem("registrationData"));
 
- // Call function to load form data
- loadFormData();
+    if (!existingData) return;
 
- // Preview uploaded profile picture
- profilePicInput.addEventListener("change", function () {
-     const file = this.files[0];
-     if (file) {
-         const reader = new FileReader();
-         reader.onload = function (e) {
-             profilePicPreview.src = e.target.result;
-         };
-         reader.readAsDataURL(file);
-     }
- });
+    if (nameInput) nameInput.value = existingData.Name || "";
+    if (emailInput) emailInput.value = existingData.Email || "";
+    if (locationInput) locationInput.value = existingData.Location || "";
+    if (profilePicPreview) profilePicPreview.src = existingData.Profile || DEFAULT_PROFILE;
+    if (profilePicture) profilePicture.src = existingData.Profile || DEFAULT_PROFILE;
+  };
 
- // Save profile changes
- saveButton.addEventListener("click", function (e) {
-     e.preventDefault();
+  loadFormData();
 
-     const updatedData = {
-         Name: nameInput.value,
-         Email: emailInput.value,
-         Location: locationInput.value,
-         Profile: profilePicPreview.src
-     };
+  // ---------------- Profile Picture Preview ----------------
+  if (profilePicInput && profilePicPreview) {
+    profilePicInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
 
-     // Save updated data to localStorage
-     localStorage.setItem("registrationData", JSON.stringify(updatedData));
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        profilePicPreview.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 
-     // Update profile display
-     loadProfileData();
+  // ---------------- Save Profile Changes ----------------
+  if (saveButton && editForm) {
+    saveButton.addEventListener("click", (e) => {
+      e.preventDefault();
 
-     alert("Profile updated successfully!");
- });
+      const updatedData = {
+        Name: nameInput?.value || "",
+        Email: emailInput?.value || "",
+        Location: locationInput?.value || "",
+        Profile: profilePicPreview?.src || DEFAULT_PROFILE
+      };
 
- // Cancel editing
- cancelButton.addEventListener("click", function () {
-     loadFormData(); // Reset form fields to existing data
- });
+      localStorage.setItem("registrationData", JSON.stringify(updatedData));
+
+      loadProfileData(); // Update profile display
+
+      alert("Profile updated successfully!");
+    });
+  }
+
+  // ---------------- Cancel Editing ----------------
+  if (cancelButton) {
+    cancelButton.addEventListener("click", () => {
+      loadFormData(); // Reset form fields
+    });
+  }
+
+});
