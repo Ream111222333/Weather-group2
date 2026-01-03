@@ -33,7 +33,7 @@ function initializeMap() {
 
 // Setup search functionality
 function setupSearchFunctionality() {
-    const searchInput = document.querySelector('.search input');
+    const searchInput = document.querySelector('.location-search input');
 
     if (searchInput) {
         searchInput.addEventListener('keypress', function (e) {
@@ -56,6 +56,8 @@ function setupSearchFunctionality() {
                 }
             }, 400);
         });
+    } else {
+        console.warn('Search input not found');
     }
 }
 
@@ -193,7 +195,7 @@ function displayWeatherInfo(weatherData, locationName) {
     weatherHumidity.textContent = weatherData.relative_humidity_2m + '%';
     weatherWind.textContent = weatherData.wind_speed_10m + ' km/h';
     weatherPressure.textContent = Math.round(weatherData.pressure_msl) + ' hPa';
-    weatherFeels.textContent = Math.round(weatherData.apparent_temperature) + '°C';
+    weatherFeels.textContent = 'Feels like: ' + Math.round(weatherData.apparent_temperature) + '°C';
 
     // Show weather section
     weatherSection.style.display = 'block';

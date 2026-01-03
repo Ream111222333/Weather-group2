@@ -1,0 +1,103 @@
+{
+  "countries": [
+    {
+      "name": "Cambodia",
+      "code": "KH",
+      "cities": [
+        "Phnom Penh",
+        "Siem Reap",
+        "Battambang",
+        "Kampot",
+        "Sihanoukville",
+        "Takeo",
+        "Prey Veng",
+        "Kandal",
+        "Svay Rieng",
+        "Pursat",
+        "Banteay Meanchey",
+        "Kratie",
+        "Mondulkiri",
+        "Ratanakiri",
+        "Kampong Thom",
+        "Kampong Chhnang",
+        "Kampong Speu",
+        "Stung Treng",
+        "Kep"
+      ]
+    },
+    {
+      "name": "Thailand",
+      "code": "TH",
+      "cities": [
+        "Bangkok",
+        "Phuket",
+        "Chiang Mai",
+        "Pattaya",
+        "Koh Samui",
+        "Krabi",
+        "Rayong",
+        "Khon Kaen",
+        "Ubon Ratchathani",
+        "Chiang Rai",
+        "Nakhon Ratchasima",
+        "Pattani",
+        "Songkhla",
+        "Satun",
+        "Trang"
+      ]
+    },
+    {
+      "name": "Vietnam",
+      "code": "VN",
+      "cities": [
+        "Ho Chi Minh City",
+        "Hanoi",
+        "Da Nang",
+        "Nha Trang",
+        "Sapa",
+        "Can Tho",
+        "Hai Phong",
+        "Hue",
+        "Ha Long",
+        "Phu Quoc",
+        "Da Lat",
+        "Vung Tau",
+        "Quy Nhon",
+        "Thai Nguyen",
+        "Nam Dinh"
+      ]
+    },
+    {
+      "name": "Laos",
+      "code": "LA",
+      "cities": [
+        "Vientiane",
+        "Luang Prabang",
+        "Pakse",
+        "Savannakhet",
+        "Luang Namtha",
+        "Thakhek",
+        "Nong Khai",
+        "Muang Khammouane",
+        "Champasak",
+        "Attapeu"
+      ]
+    },
+    {
+      "name": "Myanmar",
+      "code": "MM",
+      "cities": [
+        "Yangon",
+        "Mandalay",
+        "Naypyidaw",
+        "Bagan",
+        "Inle Lake",
+        "Tachileik",
+        "Lashio",
+        "Sittwe",
+        "Mawlamyine",
+        "Pathein"
+      ]
+    }
+  ]
+}

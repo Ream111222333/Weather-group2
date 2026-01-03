@@ -1,4 +1,72 @@
+// Load countries from JSON
+let countries = [];
+
+fetch('./source/js/country.json')
+  .then(response => response.json())
+  .then(data => {
+    countries = data.countries;
+    initializeApp();
+  });
+
+// Initialize app
+function initializeApp() {
+  const { country, city } = Storage.getLocation();
+  updateCountryDropdown(country);
+  updateCityDropdown(country);
+}
+
+// Update city list based on country
+function updateCityDropdown(selectedCountry) {
+  const countryObj = countries.find(c => c.name === selectedCountry);
+  const citySelect = document.getElementById('citySelect');
+  
+  if (!citySelect) return;
+  
+  citySelect.innerHTML = '';
+  if (countryObj) {
+    countryObj.cities.forEach(city => {
+      const option = document.createElement('option');
+      option.value = city;
+      option.textContent = city;
+      citySelect.appendChild(option);
+    });
+    citySelect.value = city;
+  }
+}
+
+// Update country dropdown
+function updateCountryDropdown(selectedCountry) {
+  const countrySelect = document.getElementById('countrySelect');
+  if (!countrySelect) return;
+  
+  countrySelect.innerHTML = '';
+  countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.name;
+    option.textContent = country.name;
+    countrySelect.appendChild(option);
+  });
+  countrySelect.value = selectedCountry;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Country and city selection
+  const countrySelect = document.getElementById('countrySelect');
+  const citySelect = document.getElementById('citySelect');
+  
+  if (countrySelect) {
+    countrySelect.addEventListener('change', (e) => {
+      updateCityDropdown(e.target.value);
+      Storage.saveLocation(e.target.value, citySelect.value);
+    });
+  }
+  
+  if (citySelect) {
+    citySelect.addEventListener('change', (e) => {
+      const countrySelect = document.getElementById('countrySelect');
+      Storage.saveLocation(countrySelect.value, e.target.value);
+    });
+  }
 
   /* ================= Navigation Hover ================= */
   const list = document.querySelectorAll(".navigation li");
