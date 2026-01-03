@@ -131,3 +131,56 @@ function alignCalendar() {
 
 // Run the alignment
 alignCalendar();
+async function updateWeatherCalendar() {
+    const now = new Date();
+    const currentDay = now.getDate();
+    const monthName = now.toLocaleString('default', { month: 'long' });
+    const dayName = now.toLocaleString('default', { weekday: 'long' });
+
+    const todayBox = document.querySelector('.today-box');
+    if (todayBox) {
+        todayBox.querySelector('h4').innerText = `${dayName}, ${monthName} ${currentDay}`;
+        todayBox.querySelector('.big-card h2').innerText = currentDay;
+    }
+
+    try {
+        const geoRes = await fetch('https://ipapi.co/json/');
+        const geoData = await geoRes.json();
+        const { latitude, longitude } = geoData;
+
+        // Fetching 31 days of data
+        const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`);
+        const weatherData = await weatherRes.json();
+
+        const cards = document.querySelectorAll('.weather-grid .card');
+        
+        cards.forEach((card) => {
+            const dateNumber = card.querySelector('p').innerText;
+            
+            // Only update weather if the card has a number (1-31)
+            if (dateNumber !== "") {
+                const dayIndex = parseInt(dateNumber) - 1; // Convert date "1" to array index 0
+                
+                const tempMax = Math.round(weatherData.daily.temperature_2m_max[dayIndex]);
+                const tempMin = Math.round(weatherData.daily.temperature_2m_min[dayIndex]);
+                const code = weatherData.daily.weathercode[dayIndex];
+
+                const mainTemp = card.querySelector('span');
+                const lowTemp = card.querySelector('small');
+                const img = card.querySelector('img');
+
+                if (mainTemp) mainTemp.innerText = `${tempMax}°C`;
+                if (lowTemp) lowTemp.innerText = `${tempMin}°C`;
+                if (img) img.src = getWeatherIcon(code);
+
+                // Sync the Today Box with real-time temperature
+                if (parseInt(dateNumber) === currentDay && todayBox) {
+                    todayBox.querySelector('h1').innerText = `${tempMax}°C`;
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error("Weather update failed:", error);
+    }
+}
