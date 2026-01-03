@@ -19,9 +19,33 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white',
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
                     }
                 }
             }

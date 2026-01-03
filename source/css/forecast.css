@@ -12,8 +12,7 @@
     flex-direction: row;        /* default, but clear */
     align-items: center;         /*vertical alignment */
     justify-content: space-between;
-
-    background: linear-gradient(to bottom, #10c6f4, #0aa1d6);
+    background: linear-gradient(to bottom, #1e5da4, #003879);
     padding: 30px;
     border-radius: 20px;
     color: white;
@@ -28,10 +27,10 @@
     gap: 6px;
 }
 .city{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .status{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 /* CENTER */
 .current-center img {
@@ -44,7 +43,7 @@
     flex-direction: column;
     gap: 6px;
     text-align: right;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .temp {
@@ -54,51 +53,6 @@
     color: white;
 }
 
-
-/* ===== Forecast ===== */
-.forecast {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 80px;
-}
-
-
-.forecast-day .day {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 60px;
-  text-align: center;
-  width: 120px;
-}
-
-.day img {
-  width: 40px;
-  margin: 10px 0;
-}
-
-.day p {
-  font-size: 18px;
-}
-
-.day small {
-  opacity: 0.8;
-}
-.weather.sunny {
-  background: linear-gradient(to bottom, #FDB813, #87CEEB);
-}
-
-.weather.cloudy {
-  background: linear-gradient(to bottom, #5A8DEE, #A7C7E7);
-}
-
-.weather.rainy {
-  background: linear-gradient(to bottom, #4B79A1, #283E51);
-}
-
-.weather.storm {
-  background: linear-gradient(to bottom, #232526, #414345);
-} 
 
 /* Left */
 .current-left p,
@@ -131,16 +85,17 @@
 }
 
 /* ===== Forecast (Horizontal Cards) ===== */
+
 .forecast {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
-  margin-top: 80px;
+  gap: 20px;
 }
 
 .forecast-day {
   flex: 1;
-  background: #97c6f1;
+  height: 30vh;
+  background: #214c75;
   border-radius: 18px;
   padding: 20px;
   text-align: center;
@@ -150,7 +105,6 @@
   width: 45px;
   margin: 10px 0;
 }
-
 .forecast-day p {
   margin: 5px 0;
   font-size: 14px;

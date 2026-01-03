@@ -1,77 +1,81 @@
 /* ================== ROOT VARIABLES ================== */
 :root {
-    --sky-light: #e0f2fe;
-    --sky-main: #bae6fd;
-    --primary: #38bdf8;
+    --secondary: #764ba2;
+    --accent: #f093fb;
     --white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.85);
-    --text-dark: #0f172a;
-    --text-soft: #64748b;
-    --border-soft: rgba(56, 189, 248, 0.35);
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.15);
-    --radius-lg: 18px;
-    --radius-md: 14px;
+    --bg-light: #f8f9fa;
+    --text-dark: #ffffff;
+    --text-soft: #ffffff;
+
+    --radius: 12px;
 }
 
 /* ================== MAIN LAYOUT ================== */
 .main {
     flex-grow: 4;
-    padding: 32px;
-    background: linear-gradient(180deg, var(--sky-light), #f8fafc);
+    padding: 30px;
     min-height: 100vh;
-    margin-left: 40px;
+    background: var(--bg-light);
+    overflow-y: auto;
 }
 
 .analytic-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 36px;
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* ================== TODAY WEATHER ================== */
-.Weather {
+.Weather,
+.weekly-forcast,
+.temperature-chart {
     width: 100%;
-    max-width: 920px;
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    padding: 32px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-soft);
-    box-shadow: var(--shadow-soft);
+    background: linear-gradient(160deg, #1e293b, #255bd8);;
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
 }
 
-.Weather h2 {
-    font-size: 1.8rem;
+.Weather h2,
+.weekly-forcast h2,
+.temperature-chart h2 {
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 16px;
+    color: white;
+    margin-bottom: 20px;
 }
 
-/* ================== CURRENT WEATHER CARD ================== */
+/* ================== WEATHER CARDS ================== */
 .weather-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 16px;
-    padding: 24px;
-    background: linear-gradient(135deg, var(--sky-main), var(--white));
-    border-radius: var(--radius-md);
-    box-shadow: inset 0 0 0 1px var(--border-soft);
+    padding: 20px;
+    background: linear-gradient(160deg, #e2edff, #587ac9);
+    border-radius: var(--radius);
+}
+
+.weather-card h3,
+.weather-card p {
+    margin: 0;
+    color: var(--text-dark);
 }
 
 .weather-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-dark);
 }
 
 .weather-card p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-soft);
 }
 
-/* ================== WEEKLY FORECAST SECTION ================== */
+/* ================== FORECAST ================== */
 .weekly-chart {
     width: 100%;
     display: flex;
@@ -80,97 +84,90 @@
     flex-wrap: wrap;
 }
 
-/* ================== WEEKLY FORECAST ================== */
-.weekly-forcast {
-    width: 100%;
-    max-width: 840px;
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    padding: 32px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-}
-
-.weekly-forcast h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--text-dark);
-}
-
-/* ================== FORECAST GRID ================== */
 .forecast-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    border-top: 1px solid var(--border);
 }
 
-/* ================== FORECAST ITEM ================== */
 .forecast-item {
-    background: linear-gradient(180deg, #f8fafc, #e2e8f0);
-    padding: 20px;
-    border-radius: var(--radius-md);
+    padding: 20px 16px;
     text-align: center;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.3s ease;
+}
+
+.forecast-item:nth-child(3n),
+.forecast-item:nth-last-child(-n+3) {
+    border-right: none;
+    border-bottom: none;
 }
 
 .forecast-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
+    background: #89adff;
 }
 
 .forecast-item h4 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-dark);
+    color: white;
+    margin: 0 0 8px 0;
 }
 
 .forecast-item p {
-    font-size: 0.9rem;
-    color: var(--text-soft);
+    font-size: 0.8rem;
+    color: white;
+    margin: 4px 0;
 }
 
-/* ================== TEMPERATURE CHART ================== */
-.temperature-chart {
-    width: 100%;
-    max-width: 640px;
-    background: var(--glass);
-    backdrop-filter: blur(8px);
-    padding: 28px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    text-align: center;
-    margin-left: 40px;
+/* Temperature Chart Canvas */
+#temperatureChart {
+    filter: brightness(1.1);
 }
 
-.temperature-chart h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--text-dark);
+canvas {
+    color: white !important;
 }
 
 /* ================== RESPONSIVE ================== */
 @media (max-width: 1024px) {
+    .main {
+        padding: 24px;
+    }
+
     .forecast-list {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
-    .main {
-        padding: 20px;
     }
 
     .Weather,
     .weekly-forcast,
     .temperature-chart {
-        padding: 20px;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main {
+        padding: 16px;
+    }
+
+    .Weather,
+    .weekly-forcast,
+    .temperature-chart {
+        padding: 16px;
     }
 
     .forecast-list {
         grid-template-columns: 1fr;
+    }
+
+    .forecast-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .forecast-item:last-child {
+        border-bottom: none;
     }
 }

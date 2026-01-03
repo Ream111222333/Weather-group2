@@ -161,7 +161,7 @@ body {
   /* Max width for better readability */
   margin: 20px auto;
   padding: 20px;
-   background: linear-gradient(160deg, #1e293b, #255bd8);
+  background: linear-gradient(160deg, #1e293b, #255bd8);
   /* Card background */
   border-radius: 12px;
   /* Rounded corners */
@@ -169,9 +169,9 @@ body {
   /* Subtle shadow */
   transition: transform 0.2s;
   /* Smooth transition for hover effect */
-   box-shadow: 0 0 20px var(--cloudColor);
-    border: rgb(227, 240, 240) 2px solid;
-    overflow: hidden;
+  box-shadow: 0 0 20px var(--cloudColor);
+  border: rgb(227, 240, 240) 2px solid;
+  overflow: hidden;
 }
 
 /* Hover Effect */
@@ -419,7 +419,7 @@ body {
   background-color: white;
   top: 0;
   z-index: 100;
-  
+
 }
 
 .head {
@@ -463,6 +463,7 @@ body {
   font-size: 2.5rem;
   cursor: pointer;
 }
+
 .user {
   position: relative;
   width: 40px;
@@ -493,9 +494,11 @@ body {
   white-space: nowrap;
   scrollbar-width: thin;
 }
+
 .cardBox::-webkit-scrollbar {
   display: none;
 }
+
 .cardBox {
   -ms-overflow-style: none;
   scrollbar-width: none;
