@@ -392,10 +392,11 @@ body {
   pointer-events: none;
 }
 
-
+.group-menu-and-search{
+  color: white;
+}
 .group-menu-and-search,
 .group-notif-profile {
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -406,8 +407,9 @@ body {
 }
 
 #notification {
+  color: white;
   font-size: 28px;
-  border: solid gray 0.2px;
+  border: solid rgb(255, 255, 255) 2px;
   border-radius: 50%;
   padding: 4px;
 }
@@ -445,7 +447,7 @@ body {
 
 .topbar {
   width: 100%;
-  background: linear-gradient(135deg, #5d6fbe, #b973ff);
+  background:linear-gradient(135deg, #042e5f, #3b1bbd, #6a5acd);
   height: 60px;
   display: flex;
   justify-content: space-between;

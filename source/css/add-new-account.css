@@ -210,8 +210,7 @@ input {
 }
 
 .toggle-middle {
-    background:
-        linear-gradient(135deg, #1b1f2a, #3b1bbd, #6a5acd);
+    background:linear-gradient(135deg, #1b1f2a, #3b1bbd, #6a5acd);
     color: #ffffff;
     position: relative;
     left: -100%;

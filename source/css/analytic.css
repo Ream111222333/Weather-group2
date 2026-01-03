@@ -33,7 +33,7 @@
 .weekly-forcast,
 .temperature-chart {
     width: 100%;
-    background: linear-gradient(160deg, #1e293b, #255bd8);;
+    background: linear-gradient(160deg, #1e293b, #255bd8);
     padding: 28px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
@@ -55,7 +55,8 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 16px;
     padding: 20px;
-    background: linear-gradient(160deg, #e2edff, #587ac9);
+    background: linear-gradient(160deg, #3a547d, #2b4e9f);
+    border-color: #ffffff;
     border-radius: var(--radius);
 }
 

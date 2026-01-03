@@ -15,12 +15,12 @@
 
 /* ================= Today Panel ================= */
 .today-box {
-  background: linear-gradient(to bottom, #21b8d3, #227bc4);
+  background: linear-gradient(160deg, #192d5c,#4f77b7);
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
   margin-bottom: 25px;
-  color: #222;
+  color: hsl(0, 0%, 100%);
 }
 
 .today-box h4 {
@@ -38,7 +38,7 @@
 .big-card {
   width: 100%;
   height: 120px;
-  background: #fff;
+  background: #8eb2f5;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -73,6 +73,12 @@
 }
 
 /* ================= Weather Grid ================= */
+.day-weather {
+  background: linear-gradient(160deg,#4f77b7, #192d5c);
+  padding: 20px;
+  border-radius: 20px;
+}
+
 .weather-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
