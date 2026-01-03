@@ -446,7 +446,7 @@ body {
 .topbar {
   width: 100%;
   background: linear-gradient(135deg, #5d6fbe, #b973ff);
-  height: 70px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -488,23 +488,14 @@ body {
   position: relative;
   width: 100000%;
   padding: 20px 0;
-  /* Adjust padding */
   display: flex;
-  /* Use flexbox for layout */
   overflow-x: auto;
-  /* Allow horizontal scrolling */
   white-space: nowrap;
-  /* Prevent cards from wrapping */
   scrollbar-width: thin;
-  /* For Firefox */
 }
-
-/* Hide scrollbar for Chrome, Safari, and Opera */
 .cardBox::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE and Edge */
 .cardBox {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -513,9 +504,7 @@ body {
 
 .card:hover {
   transform: scale(1);
-  /* Slightly enlarge on hover */
   background-color: #e0e0e0;
-  /* Darker background on hover */
 }
 
 @keyframes scroll {
@@ -541,15 +530,13 @@ h5 {
 
 
   width: 400px;
-  /* Adjust width as needed */
+
   height: 160px;
-  /* Adjust height as needed */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin-right: 20px;
   transition: transform 0.1s ease;
-  /* Smooth transformation */
   animation: scroll 12s linear infinite;
 
 
@@ -566,41 +553,30 @@ h5 {
   font-size: 1em;
   color: #555;
   width: 80%;
-  /* Control the width of the paragraph here */
-  line-height: 1.5;
-  /* Optional: improve readability */
 }
 
 .image {
   width: 38%;
   height: 98%;
-  /* Take up 1 part of the flex */
   padding: 10px 4px;
 }
 
 .image img {
   width: 100%;
-  /* Make the image responsive */
   height: 100%;
-  /* Maintain aspect ratio */
   border-radius: 8px;
-  /* Rounded corners for the left side */
 }
 
 .information {
   width: 56%;
-  /* Take up 2 parts of the flex */
   padding: 12px;
-  /* Padding around the text */
   display: flex;
   flex-direction: column;
 }
 
 .information h4 {
   margin: 0;
-  /* Remove default margin */
   font-size: 20px;
-  /* Size for the heading */
   margin-bottom: 10px;
 }
 
@@ -611,34 +587,28 @@ h5 {
   padding: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  /* Two-column layout */
   grid-gap: 30px;
 }
 
 .details .information-detail {
   width: 100%;
   height: auto;
-  /* Adjust height dynamically */
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   overflow-y: scroll;
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
 }
 
 .details .information-detail::-webkit-scrollbar {
   display: none;
-  /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .video-new {
   width: 100%;
-  /* Ensure it fits the container */
   height: auto;
-  /* Dynamically adjust height */
   aspect-ratio: 16/9;
   border-radius: 20px;
 }

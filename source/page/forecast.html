@@ -78,45 +78,36 @@
                 </li>
             </ul>
         </div>
-
         <header class="head">
             <nav>
                 <div class="topbar">
                     <div class="group-menu-and-search">
+                        <span class="icon">
+                            <img id="image-logo-responsive" src="../../assets/image-icon/logo-favicon.png"
+                                alt="logo-weather-app">
+                        </span>
                         <div class="toggle">
                             <ion-icon name="menu-outline"></ion-icon>
                         </div>
-                        <div class="search">
-                            <label class="search-wrapper">
-                                <input type="search" onclick="getWeather()" id="search-input"
-                                    placeholder="Search weather by city..." aria-label="Search Weather">
-                                <button type="button" id="search-button" class="search-btn" aria-label="Search">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                </button>
-                            </label>
-                            <div id="suggestions" class="suggestions"></div>
-                        </div>
+
                     </div>
                     <div class="group-notif-profile">
-                        <a href="source/page/notification.html">
+                        <a href="notification.html">
                             <div class="notification">
                                 <ion-icon name="notifications-outline" id="notification"></ion-icon>
                             </div>
                         </a>
-                        <a href="source/page/profile.html">
+                        <a href="profile.html">
                             <div class="user">
-                                <img id="profile-icon" src="./assets/image-icon/user-profile-icon.svg"
-                                    alt="user-profile" style="width: 40px; height: 40px;">
+                                <img id="profile-icon" src="../../assets/image/photo_2024-11-11_18-45-00.jpg"
+                                    alt="User profile picture">
                             </div>
                         </a>
                     </div>
                 </div>
             </nav>
         </header>
+
 
 
         <div class="weather">
@@ -129,7 +120,7 @@
                 </div>
 
                 <div class="current-center">
-                    <img src="/assets/image-icon/cloud-sun.png" alt="Weather Icon">
+                    <img src="../../Assets/image-icon/cloud-sun.png" alt="Weather Icon">
                 </div>
 
                 <div class="current-right">
@@ -140,41 +131,40 @@
                 </div>
             </div>
 
-
             <div class="forecast">
                 <div class="forecast-day">
                     <p>SUN</p>
-                    <img src="sun.png" alt="Sunny">
+                    <img src="../../Assets/icons/sun.png" alt="Sunny">
                     <p>20°C / 10°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>MON</p>
-                    <img src="rain.png" alt="Rainy">
+                    <img src="../../Assets/icons/rain.png" alt="Rainy">
                     <p>17°C / 8°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>TUE</p>
-                    <img src="cloud-sun.png" alt="Partly Cloudy">
+                    <img src="../../Assets/icons/cloud-sun.png" alt="Partly Cloudy">
                     <p>18°C / 7°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>WED</p>
-                    <img src="rain.png" alt="Rainy">
+                    <img src="../../Assets/icons/rain.png" alt="Rainy">
                     <p>16°C / 6°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>THU</p>
-                    <img src="cloud-sun.png" alt="Partly Cloudy">
+                    <img src="../../Assets/icons/cloud-sun.png" alt="Partly Cloudy">
                     <p>18°C / 9°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>FRI</p>
-                    <img src="cloud.png" alt="Cloudy">
+                    <img src="../../Assets/icons/cloud.png" alt="Cloudy">
                     <p>19°C / 10°C</p>
                 </div>
                 <div class="forecast-day">
                     <p>SAT</p>
-                    <img src="storm.png" alt="Storm">
+                    <img src="../../Assets/icons/storm.png" alt="Storm">
                     <p>17°C / 5°C</p>
                 </div>
             </div>

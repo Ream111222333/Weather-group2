@@ -1,7 +1,6 @@
 .weather{
   margin-left: 300px; /* match sidebar width */
   padding: 30px;
-  background: linear-gradient(to bottom, #5a8dee, #79b7ff);
   min-height: 100vh;
   color: white;
   font-family: Arial, sans-serif;
