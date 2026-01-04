@@ -16,8 +16,10 @@
     padding: 30px;
     border-radius: 20px;
     color: white;
-    max-width: 800px;
-    margin: auto;
+    width: 80%;
+    height: 40vh;
+    margin-top: 70px;
+    margin-left: 120px;
 }
 
 /* LEFT */
